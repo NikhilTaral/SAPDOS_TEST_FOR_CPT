@@ -21,8 +21,9 @@ class DoctorRepository {
   }
 
   Future<DoctorDashbord> fetchDoctorDashboard(String uId, String date) async {
-    final response = await http.get(Uri.parse(
-        '$baseUrl/Doctor/GetDoctorDashbord?DoctorUId=$uId&Date=20%2F02%2F2024'));
+    final response = await http.get(
+      Uri.parse('$baseUrl/Doctor/GetDoctorDashbord?DoctorUId=$uId&Date=$date'),
+    );
     print('Response: ${response.body}');
 
     if (response.statusCode == 200) {

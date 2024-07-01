@@ -6,7 +6,7 @@ import 'package:sopdas/Modules/patient/presintation/bloc/doctor_List.dar/list_ev
 import 'package:sopdas/Modules/patient/presintation/bloc/patient_dashbord/patient_bloc.dart';
 import 'package:sopdas/Modules/patient/data/repositories/patient_repo.dart';
 import 'package:sopdas/Modules/patient/domin/usecases/patient_usecases.dart';
-import 'package:sopdas/Modules/patient/presintation/widgets/patient_Drower.dart';
+import 'package:sopdas/Modules/patient/presintation/widgets/patient_drower.dart';
 
 class PatientPage extends StatelessWidget {
   final dynamic uId;

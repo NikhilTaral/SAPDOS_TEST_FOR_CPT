@@ -7,7 +7,7 @@ abstract class AppointmentRepository {
 class MockAppointmentRepository implements AppointmentRepository {
   @override
   Future<void> bookAppointment(AppointmentRequest appointment) async {
-    // Mock implementation: Simply print the appointment details
-    print('Booking appointment for ${appointment.patientUId} ');
+   
+   
   }
 }

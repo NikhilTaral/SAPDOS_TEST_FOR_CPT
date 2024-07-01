@@ -4,7 +4,7 @@ import 'package:sopdas/Modules/patient/data/models/Doctor_List_model.dart';
 class ProfileSection extends StatelessWidget {
   final Doctor doctor;
 
-  const ProfileSection({super.key, required this.doctor});
+  const ProfileSection({super.key, required this.doctor, });
 
   @override
   Widget build(BuildContext context) {

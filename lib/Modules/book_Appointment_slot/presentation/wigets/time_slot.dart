@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sopdas/Modules/book_Appointment_slot/data/models/slot_booking.dart';
 import 'package:sopdas/core/colors/colores.dart';
-
 class TimeSlotGrid extends StatelessWidget {
   final List<TimeSlot> timeSlots;
-  final dynamic selectedSlot;
-  final Function(String?) onSlotSelected;
+  final String? selectedSlot;
+  final void Function(String?) onSlotSelected;
 
   const TimeSlotGrid({
-    super.key,
+    Key? key,
     required this.timeSlots,
     required this.selectedSlot,
     required this.onSlotSelected,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +39,7 @@ class TimeSlotGrid extends StatelessWidget {
               leading: Radio<String?>(
                 value: slot.time,
                 groupValue: selectedSlot,
-                onChanged: (String? value) {
-                  onSlotSelected(value);
-                },
+                onChanged: onSlotSelected,
               ),
             ),
           ),

@@ -1,5 +1,5 @@
 class Doctor {
-  final dynamic uId;
+  final String uId;
   final dynamic name;
   final dynamic specialization;
 

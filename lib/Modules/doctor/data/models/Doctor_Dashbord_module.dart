@@ -1,36 +1,3 @@
-// class DoctorDashbord {
-//   final int pendingAppointment;
-//   final int completedAppointment;
-//   final int totalAppointment;
-//   final List<dynamic> patientList;
-
-//   DoctorDashbord({
-//     required this.pendingAppointment,
-//     required this.completedAppointment,
-//     required this.totalAppointment,
-//     required this.patientList,
-//   });
-
-//   factory DoctorDashbord.fromJson(Map<String, dynamic> json) => DoctorDashbord(
-//         pendingAppointment: json["pendingAppointment"],
-//         completedAppointment: json["completedAppointment"],
-//         totalAppointment: json["totalAppointment"],
-//         patientList: List<dynamic>.from(json["patientList"].map((x) => x)),
-//       );
-
-//   Map<String, dynamic> toJson() => {
-//         "pendingAppointment": pendingAppointment,
-//         "completedAppointment": completedAppointment,
-//         "totalAppointment": totalAppointment,
-//         "patientList": List<dynamic>.from(patientList.map((x) => x)),
-//       };
-
-//   double get pendingPercentage =>
-//       totalAppointment > 0 ? pendingAppointment / totalAppointment : 0.0;
-
-//   double get completedPercentage =>
-//       totalAppointment > 0 ? completedAppointment / totalAppointment : 0.0;
-// }
 
 
 import 'dart:convert';

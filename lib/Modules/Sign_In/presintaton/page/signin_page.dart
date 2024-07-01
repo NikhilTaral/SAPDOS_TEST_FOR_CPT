@@ -25,7 +25,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _addressController = TextEditingController();
 
   String dropdownValue = 'select';
-  final List<String> items = ['select', 'Doctor', 'Patient'];
+  final List<String> items = ['select', 'doctor', 'patient'];
 
   @override
   Widget build(BuildContext context) {

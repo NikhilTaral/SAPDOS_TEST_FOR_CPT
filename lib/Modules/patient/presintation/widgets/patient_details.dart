@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sopdas/Modules/patient/data/models/patient_model.dart';
 import 'package:sopdas/Modules/patient/presintation/bloc/doctor_List.dar/list_bloc.dart';
 import 'package:sopdas/Modules/patient/presintation/bloc/doctor_List.dar/list_state.dart';
-import 'package:sopdas/Modules/patient/presintation/widgets/Doctor_card.dart';
+import 'package:sopdas/Modules/patient/presintation/widgets/doctor_card.dart';
 import 'package:sopdas/core/colors/colores.dart';
 
 class PatientDetail extends StatelessWidget {
@@ -98,6 +98,7 @@ class PatientDetail extends StatelessWidget {
                               return buildDoctorCard(
                                 context,
                                 doctor,
+                                patient,
                                 (MediaQuery.of(context).size.width > 600),
                               );
                             }).toList());

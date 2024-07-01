@@ -1,5 +1,11 @@
+import 'package:equatable/equatable.dart';
 
-class AppointmentState {}
+abstract class AppointmentState extends Equatable {
+  const AppointmentState();
+
+  @override
+  List<Object?> get props => [];
+}
 
 class AppointmentInitial extends AppointmentState {}
 
@@ -10,5 +16,8 @@ class AppointmentSuccess extends AppointmentState {}
 class AppointmentFailure extends AppointmentState {
   final String message;
 
-  AppointmentFailure(this.message);
+  const AppointmentFailure(this.message);
+
+  @override
+  List<Object?> get props => [message];
 }

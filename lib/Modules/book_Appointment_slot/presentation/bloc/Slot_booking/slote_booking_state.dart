@@ -14,7 +14,7 @@ class TimeSlotLoading extends TimeSlotState {}
 
 class TimeSlotLoaded extends TimeSlotState {
   final List<TimeSlot> timeSlots;
-  final dynamic selectedSlot;
+  final String? selectedSlot;
 
   const TimeSlotLoaded(this.timeSlots, {this.selectedSlot});
 

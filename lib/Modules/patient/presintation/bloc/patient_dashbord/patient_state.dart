@@ -29,12 +29,3 @@ class PatientError extends PatientState {
   @override
   List<Object> get props => [message];
 }
-
-// class ApiLoaded extends PatientState {
-//   final ApiModel apiModel;
-
-//   const ApiLoaded({required this.apiModel});
-
-//   @override
-//   List<Object> get props => [apiModel];
-// }

@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sopdas/Modules/patient/data/models/Doctor_List_model.dart';
+import 'package:sopdas/Modules/patient/data/models/patient_model.dart';
 
 Widget buildDoctorCard(
   BuildContext context,
   Doctor doctor,
-  //PatientModel patient,
+  PatientModel patient,
+  
   bool isLargeScreen,
 ) {
   double rating = 4.5; 
 
   return GestureDetector(
     onTap: () {
-      // context.go('/ProfileSection');
-      context.push('/AppointmentScreen', extra: doctor);
+      
+      print("mcheck DOCOTOR SCREEN 1" +  doctor.name);
+      context.push(
+        '/AppointmentScreen',
+        extra: {
+          'doctor': doctor,
+          'patient': patient,
+          'isLargeScreen': isLargeScreen,
+        },
+      );
       // Navigate to doctor's detailed profile page on tap
       // Navigator.push(
       //   context,
@@ -63,7 +73,7 @@ Widget buildDoctorCard(
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      // Dynamic star rating display
+                      // Dynamic star rating !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                       _buildStarRating(rating),
                       const SizedBox(width: 5),
                       Text(
@@ -82,7 +92,7 @@ Widget buildDoctorCard(
   );
 }
 
-//  build star rating icons
+//  build star rating icons iiiiiiiiiiiiiiiii
 Widget _buildStarRating(double rating) {
   int fullStars = rating.floor();
   bool hasHalfStar = rating - fullStars >= 0.5;

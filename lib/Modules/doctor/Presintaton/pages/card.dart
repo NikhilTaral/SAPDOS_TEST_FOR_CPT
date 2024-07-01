@@ -89,7 +89,7 @@ class DashboardScreen extends StatelessWidget {
             DashboardCard(
               label: 'Total Appointments',
               count: doctorDashboard.totalAppointment.toString(),
-              percentage: pendingPercentage / completedPercentage,
+              percentage: 1.0, // Always 100%
             ),
           ],
         ),
