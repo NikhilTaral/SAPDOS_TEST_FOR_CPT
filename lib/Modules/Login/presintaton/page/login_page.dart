@@ -224,36 +224,41 @@ class LoginPage extends StatelessWidget {
                               },
                               child: BlocBuilder<LoginBloc, LoginState>(
                                 builder: (context, state) {
-                                  return SizedBox(
-                                    height: 40,
-                                    width: 290,
-                                    child: ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: AppColors.dark,
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(8),
+                                  if (state is LoginLoading) {
+                                    return const CircularProgressIndicator();
+                                  } else {
+                                    return SizedBox(
+                                      height: 40,
+                                      width: 290,
+                                      child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: AppColors.dark,
+                                          shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(8),
+                                            ),
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          final userName =
+                                              _userNameController.text;
+                                          final password =
+                                              _passwordController.text;
+                                          BlocProvider.of<LoginBloc>(context)
+                                              .add(
+                                            LoginSubmitted(userName, password),
+                                          );
+                                        },
+                                        child: const Text(
+                                          'Login',
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: AppColors.light,
                                           ),
                                         ),
                                       ),
-                                      onPressed: () {
-                                        final userName =
-                                            _userNameController.text;
-                                        final password =
-                                            _passwordController.text;
-                                        BlocProvider.of<LoginBloc>(context).add(
-                                          LoginSubmitted(userName, password),
-                                        );
-                                      },
-                                      child: const Text(
-                                        'Login',
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: AppColors.light,
-                                        ),
-                                      ),
-                                    ),
-                                  );
+                                    );
+                                  }
                                 },
                               ),
                             ),

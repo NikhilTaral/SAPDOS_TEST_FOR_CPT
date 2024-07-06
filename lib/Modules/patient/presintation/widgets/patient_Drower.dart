@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sopdas/Modules/patient/presintation/bloc/patient_dashbord/patient_bloc.dart';
 import 'package:sopdas/Modules/patient/presintation/bloc/patient_dashbord/patient_event.dart';
 import 'package:sopdas/Modules/patient/presintation/bloc/patient_dashbord/patient_state.dart';
+import 'package:sopdas/Modules/patient/presintation/widgets/loding.dart';
 import 'package:sopdas/Modules/patient/presintation/widgets/patient_details.dart';
 import 'package:sopdas/core/colors/colores.dart';
 
@@ -84,7 +85,7 @@ class PatientView extends StatelessWidget {
             context.read<PatientBloc>().add(GetPatient(uId));
             return const Center(child: CircularProgressIndicator());
           } else if (state is PatientLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: PatientDetailLoding());
           } else if (state is PatientLoaded) {
             return PatientDetail(
                 patient: state.patient, isLargeScreen: isLargeScreen);

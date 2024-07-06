@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_neat_and_clean_calendar/flutter_neat_and_clean_calendar.dart';
-import 'package:sopdas/Modules/book_Appointment_slot/data/models/slot_booking.dart';
 import 'package:sopdas/Modules/book_Appointment_slot/presentation/bloc/Slot_booking/slote_booking_bloc.dart';
 import 'package:sopdas/Modules/book_Appointment_slot/presentation/bloc/Slot_booking/slote_booking_event.dart';
 import 'package:sopdas/Modules/book_Appointment_slot/presentation/bloc/Slot_booking/slote_booking_state.dart';
+import 'package:sopdas/Modules/book_Appointment_slot/presentation/wigets/loding.dart';
 import 'package:sopdas/Modules/book_appointment_slot/presentation/wigets/profile.dart';
 import 'package:sopdas/Modules/book_appointment_slot/presentation/wigets/time_slot.dart';
 import 'package:sopdas/Modules/patient/data/models/Doctor_List_model.dart';
@@ -108,7 +107,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
       child: BlocBuilder<TimeSlotBloc, TimeSlotState>(
         builder: (context, state) {
           if (state is TimeSlotLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: TimeSlotGridLoding());
           } else if (state is TimeSlotLoaded) {
             return TimeSlotGrid(
               timeSlots: state.timeSlots,
